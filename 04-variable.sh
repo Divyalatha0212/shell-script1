@@ -6,5 +6,9 @@ PERSON=$2
 
 #refering variable
 
+#echo "$PERSON1:: Hello $PERSON2, How are you?"
+#echo "$PERSON2:: Hi $PERSON1, I am good, hw are you doing?"
+
+
 echo "$PERSON1:: Hello $PERSON2, How are you?"
-echo "$PERSON2:: Hi $PERSON1, I am good, hw are you doing?"
+echo "$PERSON2:: Hi $PERSON1, I am fine. How are you?"
