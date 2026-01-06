@@ -4,7 +4,8 @@ USERID=$(id -u)
 if [ $USERID -ne 0 ]
 then
 echo "Please run the script with root access"
-elase
+exit 1
+else
 echo "you are the root user"
 fi
 
