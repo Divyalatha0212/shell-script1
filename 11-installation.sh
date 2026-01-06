@@ -20,6 +20,7 @@ echo "Installing MYSQL..SUCCESS"
 fi
 
 dnf install git -y
+if [ $? -ne 0 ]
 then 
 echo "Installing git is..FAILURE"
 exit 1
