@@ -1,5 +1,10 @@
 #!/bin/bash
 USERID=$(id -u)
+R="\e[31m
+G="\e[32m
+Y="\e[33m
+N="\e[0m
+
 
 if [ $USERID -ne 0 ]
 then
@@ -13,17 +18,17 @@ dnf install mysql -y
 
 if [ $? -ne 0 ]
 then
-echo "Installation is..FAILURE"
+echo -e "Installation is..$R FAILURE"
 exit 1
 else
-echo "Installing MYSQL..SUCCESS"
+echo -e "Installing MYSQL..$G SUCCESS"
 fi
 
 dnf install git -y
 if [ $? -ne 0 ]
 then 
-echo "Installing git is..FAILURE"
+echo -e "Installing git is..$R FAILURE"
 exit 1
 else
-echo "Installing git is..SUCCESS"
+echo -e "Installing git is..$G SUCCESS"
 fi
