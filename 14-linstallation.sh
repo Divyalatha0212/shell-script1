@@ -2,7 +2,7 @@
 
 USERID=$(id -u)
 TIMESTAMP=$(date +%F-%H-%M-%S)
-SCRIPT_NAME=$(echo "$0 | cut -d "." -f1")
+SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
 
 R="\e[31m"
@@ -25,17 +25,17 @@ else
 echo " you are the root user "
 fi
 
-for i $@
+for in i $@
 do 
 echo "package to install: $i"
-dnf list installed $i &>>LOGFILE
+dnf list installed $i &>>$LOGFILE
 if [ $? -eq 0 ]
 
 then
-echo -e $i already installed--$Y SKIPPING $N"
+echo -e "$i already installed--$Y SKIPPING $N"
 
 else
-dnf install $i -y &>>LOGFILE
+dnf install $i -y &>>$LOGFILE
 fi
 done
 
