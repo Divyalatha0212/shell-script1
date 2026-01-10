@@ -10,7 +10,7 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-if [ $1 -ne 0 ]
+if [ $USERID -ne 0 ]
 then
 echo -e "$2 $R FAILURE $N"
 else
