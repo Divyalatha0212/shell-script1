@@ -15,7 +15,7 @@ VALIDATE ()
 }
 
 
-if [ $USERDID -ne 0 ]
+if [ $USERID -ne 0 ]
 then 
 echo " Please run the script in root"
 else
@@ -23,7 +23,7 @@ echo " you are the root user."
 fi
 
 dnf install mysql -y
-VALIDATE &? "Installing mysql"
+VALIDATE $? "Installing mysql"
 
 dnf install git -y
 VALIDATE $? "installing git"
